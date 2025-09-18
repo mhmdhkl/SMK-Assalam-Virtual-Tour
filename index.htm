@@ -81,9 +81,7 @@
                 }, player, true);
             }, player, false);
 
-            /* Listen messages */
             window.addEventListener('message', function (e) {
-                //Listen to messages for make actions to player in the format function:param1,param2
                 var action = e.data;
                 if (action == 'pauseTour' || action == 'resumeTour') {
                     this[action].apply(this);
@@ -195,7 +193,7 @@
             {
                 preloadContainer.addEventListener(transitionEndName, hide, false);
                 preloadContainer.style.opacity = 0;
-                setTimeout(hide, 500); //Force hide. Some cases the transitionend event isn't dispatched with an iFrame.
+                setTimeout(hide, 500); 
             }
             else
             {
