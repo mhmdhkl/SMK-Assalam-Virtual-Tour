@@ -1,97 +1,184 @@
+/* --- Pengaturan Global --- */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #4a90e2, #50e3c2); /* Gradasi warna biru ke hijau toska */
+    background-color: #f4f7f6;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.card {
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    padding: 40px;
-    max-width: 600px;
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+.container {
     width: 90%;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+main {
+    flex-grow: 1; /* Membuat konten utama memenuhi ruang yang tersisa */
+    padding: 40px 0;
 }
 
-/* Header */
-header .logo {
-    width: 100px;
-    height: auto;
-    margin-bottom: 15px;
+/* --- Navigasi --- */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
     font-weight: 700;
+    font-size: 1.5em;
     color: #2c3e50;
 }
 
-header p {
-    margin: 5px 0 20px;
-    color: #7f8c8d;
-    font-size: 1.1em;
+.nav-logo img {
+    width: 40px;
+    margin-right: 10px;
 }
 
-/* Konten Utama */
-main h2 {
-    font-size: 1.8em;
-    color: #34495e;
-    margin-top: 20px;
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
 }
 
-main p {
-    line-height: 1.6;
+.nav-links a {
     color: #555;
-    margin-bottom: 30px;
+    font-weight: 600;
+    transition: color 0.3s;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
 }
 
-/* Tombol Aksi (Call to Action) */
+.nav-links a:hover, .nav-links a.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+/* --- Konten Halaman (Umum) --- */
+.page-header {
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.content-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-top: -30px; /* Efek kartu menumpuk di atas header */
+}
+
+/* --- Halaman Beranda (Spesifik) --- */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: url('https://via.placeholder.com/1200x400.png?text=Foto+Sekolah+SMK+As+Salam') no-repeat center center/cover;
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 40px;
+}
+.hero h1 { font-size: 3em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+.hero p { font-size: 1.2em; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+.section { margin-bottom: 40px; }
+.section h2 { text-align: center; font-size: 2em; margin-bottom: 20px; color: #34495e; }
+.majors { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.major-item { background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center; }
+
+/* --- Halaman Visi Misi & Virtual Tour (Spesifik) --- */
+.visi-misi h2 { color: #34495e; border-left: 5px solid #3498db; padding-left: 15px; }
+.visi-misi ul { list-style-type: disc; padding-left: 20px; }
+
+.tour-card { text-align: center; }
 .cta-button {
     display: inline-block;
-    background-color: #3498db;
+    background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
     padding: 15px 30px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1em;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
-
 .cta-button:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.2);
 }
 
-/* Footer */
-footer {
-    margin-top: 30px;
-    font-size: 0.8em;
-    color: #95a5a6;
+/* --- Footer --- */
+.footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0;
+    margin-top: auto; /* Mendorong footer ke bawah */
 }
 
-@media (max-width: 600px) {
-    .card {
-        padding: 25px;
-    }
-    
-    header h1 {
-        font-size: 2em;
-    }
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-    main h2 {
-        font-size: 1.5em;
-    }
+.footer-about, .footer-contact, .footer-social {
+    padding: 10px;
+}
+
+.footer h3 {
+    color: #50e3c2;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #34495e;
+    padding-bottom: 10px;
+}
+
+.footer p, .footer a {
+    color: #bdc3c7;
+    line-height: 1.7;
+}
+
+.footer-social a {
+    margin-right: 15px;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #50e3c2;
 }
